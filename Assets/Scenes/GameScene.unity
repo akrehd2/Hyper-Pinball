@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -530,6 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1075619265}
+  - component: {fileID: 1075619266}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -556,6 +557,18 @@ Transform:
   m_Father: {fileID: 539387839}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1075619266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075619264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9fab4a6cc01d94cb3df2bc9c75d904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1157888710
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +774,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257547857}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -828,7 +841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  obstaclePrefab:
+  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
   Detector: {fileID: 1257547857}
   Obstacle:
     serializedVersion: 2
@@ -876,7 +890,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334104719}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -943,7 +957,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  obstaclePrefab:
+  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
   Detector: {fileID: 1334104719}
   Obstacle:
     serializedVersion: 2
@@ -977,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  obstaclePrefab: []
   Detector: {fileID: 0}
   Obstacle:
     serializedVersion: 2
@@ -1040,7 +1055,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809685129}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -1107,7 +1122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  obstaclePrefab:
+  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
   Detector: {fileID: 1809685129}
   Obstacle:
     serializedVersion: 2
@@ -1155,7 +1171,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068751325}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -1222,7 +1238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  obstaclePrefab:
+  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
   Detector: {fileID: 2068751325}
   Obstacle:
     serializedVersion: 2
