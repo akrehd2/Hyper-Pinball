@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -841,12 +841,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab:
-  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  itemPrefab: []
   Detector: {fileID: 1257547857}
-  Obstacle:
+  Item:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
 --- !u!1 &1334104719
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,12 +956,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab:
-  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  itemPrefab: []
   Detector: {fileID: 1334104719}
-  Obstacle:
+  Item:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
 --- !u!1 &1661241723
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,9 +990,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: []
+  itemPrefab: []
   Detector: {fileID: 0}
-  Obstacle:
+  Item:
     serializedVersion: 2
     m_Bits: 0
 --- !u!4 &1661241725
@@ -1122,12 +1120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab:
-  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  itemPrefab: []
   Detector: {fileID: 1809685129}
-  Obstacle:
+  Item:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
 --- !u!1 &2068751325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,9 +1235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab:
-  - {fileID: 2552725128185279361, guid: 685fb1bdf335caf46964b72b6ac873fc, type: 3}
+  itemPrefab: []
   Detector: {fileID: 2068751325}
-  Obstacle:
+  Item:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
