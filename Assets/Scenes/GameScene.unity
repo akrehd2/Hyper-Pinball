@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,6 +260,10 @@ PrefabInstance:
     - target: {fileID: 2528720790139099486, guid: 62d250ffbbae31e48bb3034382a2a10d, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655423409152894400, guid: 62d250ffbbae31e48bb3034382a2a10d, type: 3}
+      propertyPath: Pin.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62d250ffbbae31e48bb3034382a2a10d, type: 3}
@@ -502,7 +506,7 @@ GameObject:
   - component: {fileID: 539387842}
   m_Layer: 7
   m_Name: Pinball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,6 +633,7 @@ MonoBehaviour:
   pinBallrb: {fileID: 539387840}
   line: {fileID: 1157888711}
   speed: 5
+  combo: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,11 +1403,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: []
+  itemPrefab:
+  - {fileID: 2239592021111846859, guid: ec08afaeb3c25ce4794cdadd32f02292, type: 3}
+  - {fileID: 4980557391687253365, guid: 36c2e9fcfc097e044a3de9927df75011, type: 3}
   Detector: {fileID: 1257547857}
   Item:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1792
+  StarL:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &1334104719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,11 +1523,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: []
+  itemPrefab:
+  - {fileID: 2239592021111846859, guid: ec08afaeb3c25ce4794cdadd32f02292, type: 3}
+  - {fileID: 4980557391687253365, guid: 36c2e9fcfc097e044a3de9927df75011, type: 3}
   Detector: {fileID: 1334104719}
   Item:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1792
+  StarL:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &1661241723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1565,9 @@ MonoBehaviour:
   itemPrefab: []
   Detector: {fileID: 0}
   Item:
+    serializedVersion: 2
+    m_Bits: 0
+  StarL:
     serializedVersion: 2
     m_Bits: 0
 --- !u!4 &1661241725
@@ -1677,11 +1695,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: []
+  itemPrefab:
+  - {fileID: 2239592021111846859, guid: ec08afaeb3c25ce4794cdadd32f02292, type: 3}
+  - {fileID: 4980557391687253365, guid: 36c2e9fcfc097e044a3de9927df75011, type: 3}
   Detector: {fileID: 1809685129}
   Item:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1792
+  StarL:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &2068751325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,11 +1815,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e62a70414e8b14c98b4804f4587b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: []
+  itemPrefab:
+  - {fileID: 2239592021111846859, guid: ec08afaeb3c25ce4794cdadd32f02292, type: 3}
+  - {fileID: 4980557391687253365, guid: 36c2e9fcfc097e044a3de9927df75011, type: 3}
   Detector: {fileID: 2068751325}
   Item:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1792
+  StarL:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &2104774363
 GameObject:
   m_ObjectHideFlags: 0

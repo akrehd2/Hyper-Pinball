@@ -9,6 +9,11 @@ public class PinballController : MonoBehaviour
     public float speed = 5.0f;
     Vector3 startPoint, targetPoint;
 
+    [SerializeField]
+    public static long score = 0;
+    [SerializeField]
+    long combo = 0;
+
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -37,6 +42,28 @@ public class PinballController : MonoBehaviour
         if((pinBallrb.velocity.x < 1f && pinBallrb.velocity.x > -1f)||(pinBallrb.velocity.z < 1f && pinBallrb.velocity.z > -1f))
         {
             pinBallrb.velocity = Vector3.zero;
+            combo = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "BasicGem")
+        {
+            other.GetComponent<itemRotate>().PS.Play();
+            Destroy(other.gameObject);
+
+            score += 100 * combo;
+            combo += 1;
+        }
+
+        if (other.gameObject.name == "Star")
+        {
+            other.GetComponent<itemRotate>().PS.Play();
+            Destroy(other.gameObject);
+
+            score += 1000 * combo;
+            combo += 1;
         }
     }
 }
