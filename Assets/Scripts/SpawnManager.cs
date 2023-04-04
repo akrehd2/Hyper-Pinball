@@ -7,11 +7,12 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] itemPrefab; //Prefab을 받을 public 변수
     public GameObject Detector;
 
-    private float xRange = 9;
-    private float zRange = 16;
+    private float xRange = 15;
+    private float zRange = 15;
     private float radius = 50.0f;
 
     public LayerMask Item;
+    public LayerMask StarL;
 
     void Start()
     {
@@ -30,8 +31,14 @@ public class SpawnManager : MonoBehaviour
         //Vector3 randomSpawnPos = new Vector3(Random.Range(Camera.main.transform.position.x - 9, Camera.main.transform.position.x + 9), 0, Random.Range(Camera.main.transform.position.z - 16, Camera.main.transform.position.z + 16));
         Vector3 randomSpawnPos = new Vector3(Random.Range(transform.position.x - xRange, transform.position.x + xRange), 0, Random.Range(transform.position.z - zRange, transform.position.z + zRange));
         Collider[] colls = Physics.OverlapSphere(transform.position, radius, Item);
+        Collider[] Star = Physics.OverlapSphere(transform.position, radius, StarL);
 
-        if (colls.Length < 10)
+
+        if (Star.Length < 5)
+        {
+            Instantiate(itemPrefab[1], randomSpawnPos, itemPrefab[1].transform.rotation);
+        }
+        else if (colls.Length < 30)
         {
             Instantiate(itemPrefab[0], randomSpawnPos, itemPrefab[0].transform.rotation);
         }
