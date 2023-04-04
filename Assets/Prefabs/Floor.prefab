@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pin:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 128
 --- !u!1 &5110859312183831649
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pin:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 128
   Ground:
     serializedVersion: 2
     m_Bits: 64

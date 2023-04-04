@@ -13,6 +13,9 @@ public class SpawnManager : MonoBehaviour
 
     public LayerMask Item;
     public LayerMask StarL;
+    public LayerMask PowerL;
+    public LayerMask BarrelL;
+    public LayerMask RockL;
 
     void Start()
     {
@@ -32,13 +35,27 @@ public class SpawnManager : MonoBehaviour
         Vector3 randomSpawnPos = new Vector3(Random.Range(transform.position.x - xRange, transform.position.x + xRange), 0, Random.Range(transform.position.z - zRange, transform.position.z + zRange));
         Collider[] colls = Physics.OverlapSphere(transform.position, radius, Item);
         Collider[] Star = Physics.OverlapSphere(transform.position, radius, StarL);
+        Collider[] Power = Physics.OverlapSphere(transform.position, radius * 2f, PowerL);
+        Collider[] Barrel = Physics.OverlapSphere(transform.position, radius * 2f, BarrelL);
+        Collider[] Rock = Physics.OverlapSphere(transform.position, radius * 2f, RockL);
 
-
-        if (Star.Length < 5)
+        if (Rock.Length < 1)
+        {
+            Instantiate(itemPrefab[4], randomSpawnPos + new Vector3(0,1,0), itemPrefab[4].transform.rotation);
+        }
+        else if (Barrel.Length < 3)
+        {
+            Instantiate(itemPrefab[3], randomSpawnPos - new Vector3(0, 0.5f, 0), itemPrefab[3].transform.rotation);
+        }
+        else if (Power.Length < 1)
+        {
+            Instantiate(itemPrefab[2], randomSpawnPos, itemPrefab[2].transform.rotation);
+        }
+        else if (Star.Length < 5)
         {
             Instantiate(itemPrefab[1], randomSpawnPos, itemPrefab[1].transform.rotation);
         }
-        else if (colls.Length < 30)
+        else if (colls.Length < 40)
         {
             Instantiate(itemPrefab[0], randomSpawnPos, itemPrefab[0].transform.rotation);
         }
