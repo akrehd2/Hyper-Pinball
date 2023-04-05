@@ -7,8 +7,13 @@ public class PinballController : MonoBehaviour
     public Rigidbody pinBallrb;
     public LineRenderer line;
     public ParticleSystem mine;
+    
     public GameObject RockPS;
+    public GameObject touchToStartPanel;
+    
+    
     public float speed = 5.0f;
+    
     Vector3 startPoint, targetPoint;
     Vector3 lastVelocity;
 
@@ -23,7 +28,14 @@ public class PinballController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (chance > 0 && combo == 0)
+        if(touchToStartPanel.activeSelf == true)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                touchToStartPanel.SetActive(false);
+            }
+        }
+        else if (chance > 0 && combo == 0 && touchToStartPanel.activeSelf == false)
         {
             if (Input.GetMouseButton(0))
             {
