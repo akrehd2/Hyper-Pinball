@@ -7,8 +7,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] itemPrefab; //Prefab을 받을 public 변수
     public GameObject Detector;
 
-    private float xRange = 15;
-    private float zRange = 15;
+    private float xRange = 10;
+    private float zRange = 10;
     private float radius = 50.0f;
 
     public LayerMask Item;

@@ -9,17 +9,17 @@ public class PinballController : MonoBehaviour
     public ParticleSystem mine;
     
     public GameObject RockPS;
-    public GameObject touchToStartPanel;
-    
-    
-    public float speed = 5.0f;
+    public GameObject Panel;
+
+    public float MaxSpeed = 700.0f;
     
     Vector3 startPoint, targetPoint;
     Vector3 lastVelocity;
 
     int chance = 2;
-    [SerializeField]
+
     public static long score = 0;
+    public static long coin = 0;
     [SerializeField]
     long combo = 0;
 
@@ -28,14 +28,27 @@ public class PinballController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(touchToStartPanel.activeSelf == true)
+        //최대속도
+        if(pinBallrb.velocity.x > MaxSpeed)
         {
-            if(Input.GetMouseButtonDown(0))
-            {
-                touchToStartPanel.SetActive(false);
-            }
+            pinBallrb.velocity = new Vector3(MaxSpeed, 0, pinBallrb.velocity.z);
         }
-        else if (chance > 0 && combo == 0 && touchToStartPanel.activeSelf == false)
+        else if(pinBallrb.velocity.x < -MaxSpeed)
+        {
+            pinBallrb.velocity = new Vector3(-MaxSpeed, 0, pinBallrb.velocity.z);
+        }
+
+        if (pinBallrb.velocity.z > MaxSpeed)
+        {
+            pinBallrb.velocity = new Vector3(pinBallrb.velocity.x, 0, MaxSpeed);
+        }
+        else if (pinBallrb.velocity.z < -MaxSpeed)
+        {
+            pinBallrb.velocity = new Vector3(pinBallrb.velocity.x, 0, -MaxSpeed);
+        }
+
+        //클릭
+        if (chance > 0 && combo == 0)
         {
             if (Input.GetMouseButton(0))
             {
@@ -56,18 +69,25 @@ public class PinballController : MonoBehaviour
                 pinBallrb.AddForce((startPoint - targetPoint) * 30f, ForceMode.Impulse);
                 line.gameObject.SetActive(false);
                 chance -= 1;
+                combo = 1;
             }
         }
-        else if(chance <= 0)
+        else if(chance <= 0 && combo == 0)
         {
-            //gamestop
+            Panel.GetComponent<ChangeScene>().GoEndScene(); 
+        }
+        else
+        {
+            if ((Mathf.Abs(pinBallrb.velocity.x) + Mathf.Abs(pinBallrb.velocity.z) < 2f))
+            {
+                combo = 0;
+            }
         }
 
-        if((pinBallrb.velocity.x < 1f && pinBallrb.velocity.x > -1f)||(pinBallrb.velocity.z < 1f && pinBallrb.velocity.z > -1f))
+        if ((Mathf.Abs(pinBallrb.velocity.x) + Mathf.Abs(pinBallrb.velocity.z) < 2f))
         {
             pinBallrb.velocity = Vector3.zero;
             mine.Stop();
-            combo = 0;
         }
         else
         {
@@ -92,19 +112,19 @@ public class PinballController : MonoBehaviour
 
             if (pinBallrb.velocity.x >= 0 && pinBallrb.velocity.z >= 0)
             {
-                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(20f, 0, 20f);
+                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(30f, 0, 30f);
             }
             else if (pinBallrb.velocity.x < 0 && pinBallrb.velocity.z >= 0)
             {
-                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(-20f, 0, 20f);
+                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(-30f, 0, 30f);
             }
             else if (pinBallrb.velocity.x >= 0 && pinBallrb.velocity.z < 0)
             {
-                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(20f, 0, -20f);
+                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(30f, 0, -30f);
             }
             else if (pinBallrb.velocity.x < 0 && pinBallrb.velocity.z < 0)
             {
-                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(-20f, 0, -20f);
+                pinBallrb.velocity = pinBallrb.velocity * 1.2f + new Vector3(-30f, 0, -30f);
             }
         }
 
