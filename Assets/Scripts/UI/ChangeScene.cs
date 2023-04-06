@@ -19,4 +19,9 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("ShopScene");
     }
+
+    public void GoEndScene()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
 }
