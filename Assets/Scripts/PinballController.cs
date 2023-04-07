@@ -44,7 +44,14 @@ public class PinballController : MonoBehaviour
         Combo.color = new Color(255/255f, (255 - (int)combo * 5)/255f, (255 - (int)combo * 5)/255f);
 
         Combo.fontSize = 150 + combo;
-        Combo.GetComponent<RectTransform>().sizeDelta = new Vector2(620 + combo*2, 200);
+        if(Combo.fontSize < 210)
+        {
+            Combo.GetComponent<RectTransform>().sizeDelta = new Vector2(620 + combo * 2, 200);
+        }
+        else
+        {
+            Combo.GetComponent<RectTransform>().sizeDelta = new Vector2(620 + combo * 3, 200);
+        }
 
         //최대속도
         if (pinBallrb.velocity.x > MaxSpeed)
