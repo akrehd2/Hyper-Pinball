@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour
     public LayerMask PowerL;
     public LayerMask BarrelL;
     public LayerMask RockL;
+    public LayerMask DollarL;
 
     void Start()
     {
@@ -35,11 +36,16 @@ public class SpawnManager : MonoBehaviour
         Vector3 randomSpawnPos = new Vector3(Random.Range(transform.position.x - xRange, transform.position.x + xRange), 0, Random.Range(transform.position.z - zRange, transform.position.z + zRange));
         Collider[] colls = Physics.OverlapSphere(transform.position, radius, Item);
         Collider[] Star = Physics.OverlapSphere(transform.position, radius, StarL);
-        Collider[] Power = Physics.OverlapSphere(transform.position, radius * 2f, PowerL);
+        Collider[] Power = Physics.OverlapSphere(transform.position, radius * 3f, PowerL);
         Collider[] Barrel = Physics.OverlapSphere(transform.position, radius * 2f, BarrelL);
         Collider[] Rock = Physics.OverlapSphere(transform.position, radius * 2f, RockL);
+        Collider[] Daller = Physics.OverlapSphere(transform.position, radius * 2f, DollarL);
 
-        if (Rock.Length < 1)
+        if (Daller.Length < 2)
+        {
+            Instantiate(itemPrefab[5], randomSpawnPos, itemPrefab[5].transform.rotation);
+        }
+        else if (Rock.Length < 1)
         {
             Instantiate(itemPrefab[4], randomSpawnPos + new Vector3(0,1,0), itemPrefab[4].transform.rotation);
         }

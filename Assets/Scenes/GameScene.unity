@@ -2376,10 +2376,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8125900186499853, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: DollarL.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125900186499853, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125900186499853, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 2011219840472574717, guid: 2f1e6c4f9540f964e80899b5362955a3, type: 3}
     - target: {fileID: 485167300006688926, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
       propertyPath: m_Name
       value: Detector
       objectReference: {fileID: 0}
+    - target: {fileID: 3219026755293198399, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: DollarL.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219026755293198399, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219026755293198399, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 2011219840472574717, guid: 2f1e6c4f9540f964e80899b5362955a3, type: 3}
+    - target: {fileID: 3527283274507918116, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: DollarL.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527283274507918116, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527283274507918116, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 2011219840472574717, guid: 2f1e6c4f9540f964e80899b5362955a3, type: 3}
     - target: {fileID: 4853626103138697270, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2424,6 +2460,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7195931873213991522, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: DollarL.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195931873213991522, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195931873213991522, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
+      propertyPath: itemPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 2011219840472574717, guid: 2f1e6c4f9540f964e80899b5362955a3, type: 3}
     - target: {fileID: 9011068425517774218, guid: 0e5c3706486cf2a4cb7fb3a291b5b7d3, type: 3}
       propertyPath: Pin
       value: 
