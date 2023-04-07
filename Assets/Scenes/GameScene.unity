@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2349,7 +2349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1411632035033287162, guid: c0919b789275e98488d734ffbf697709, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 1411632035033287162, guid: c0919b789275e98488d734ffbf697709, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2612,7 +2612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5782720706629025653, guid: 90310236cc8b3fd409e85f8a2500bfc5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 5782720706629025653, guid: 90310236cc8b3fd409e85f8a2500bfc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
