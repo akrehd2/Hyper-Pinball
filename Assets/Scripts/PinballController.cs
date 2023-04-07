@@ -87,7 +87,7 @@ public class PinballController : MonoBehaviour
         }
         else if(chance <= 0 && combo == 0)
         {
-            coin += score / 1000;
+            coin += score / 2500;
             Panel.GetComponent<ChangeScene>().GoEndScene();
         }
         else
