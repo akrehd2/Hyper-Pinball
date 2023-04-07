@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -20,14 +21,15 @@ public class PinballController : MonoBehaviour
 
     public float MaxSpeed = 700.0f;
     
-    Vector3 startPoint, targetPoint;
+    public Vector3 startPoint, targetPoint;
     Vector3 lastVelocity;
 
-    int chance = 2;
+    public static int chance = 2;
 
     public static long score = 0;
     public static long coin = 0;
     public static long combo = 0;
+    public static long coinGain = 0;
 
     void Update()
     {
@@ -40,7 +42,9 @@ public class PinballController : MonoBehaviour
         Chance.text = "Chance " + chance.ToString();
 
         Combo.color = new Color(255/255f, (255 - (int)combo * 5)/255f, (255 - (int)combo * 5)/255f);
+
         Combo.fontSize = 150 + combo;
+        Combo.GetComponent<RectTransform>().sizeDelta = new Vector2(620 + combo*2, 200);
 
         //최대속도
         if (pinBallrb.velocity.x > MaxSpeed)
@@ -62,13 +66,14 @@ public class PinballController : MonoBehaviour
         }
 
         //클릭
-        if (chance > 0 && combo == 0)
+        if (Physics.Raycast(ray, out hit))
         {
-            if (Input.GetMouseButton(0))
+            if (chance > 0 && combo == 0 && hit.collider.name != "setArea" && Time.timeScale != 0.0f)
             {
-                line.gameObject.SetActive(true); //좌클했을때 라인 보임 //평소엔 라인 꺼놓으셈
-                if (Physics.Raycast(ray, out hit))
+                if (Input.GetMouseButton(0))
                 {
+                    line.gameObject.SetActive(true); //좌클했을때 라인 보임 //평소엔 라인 꺼놓으셈
+
                     startPoint = new Vector3(transform.position.x, 0, transform.position.z);
                     targetPoint = new Vector3(hit.point.x, 0, hit.point.z);
 
@@ -76,26 +81,28 @@ public class PinballController : MonoBehaviour
                     //첫번째 매개변수는 1이나 0 들어가고 //두번쨰 매개변수는 Vector3 값 들어가는데 "위치"임
                     line.SetPosition(1, startPoint); //1 넣으면: 시작위치
                     line.SetPosition(0, targetPoint); //0 넣으면: 목표위치
+
+                }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    pinBallrb.AddForce((startPoint - targetPoint) * 30f, ForceMode.Impulse);
+                    line.gameObject.SetActive(false);
+                    chance -= 1;
+                    combo = 1;
                 }
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if (chance <= 0 && combo == 0)
             {
-                pinBallrb.AddForce((startPoint - targetPoint) * 30f, ForceMode.Impulse);
-                line.gameObject.SetActive(false);
-                chance -= 1;
-                combo = 1;
+                coinGain = score / 2500;
+                coin += coinGain;
+                Panel.GetComponent<ChangeScene>().GoEndScene();
             }
-        }
-        else if(chance <= 0 && combo == 0)
-        {
-            coin += score / 2500;
-            Panel.GetComponent<ChangeScene>().GoEndScene();
-        }
-        else
-        {
-            if ((Mathf.Abs(pinBallrb.velocity.x) + Mathf.Abs(pinBallrb.velocity.z) < 2f))
+            else
             {
-                combo = 0;
+                if ((Mathf.Abs(pinBallrb.velocity.x) + Mathf.Abs(pinBallrb.velocity.z) < 2f))
+                {
+                    combo = 0;
+                }
             }
         }
 

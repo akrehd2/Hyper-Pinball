@@ -8,5 +8,6 @@ public class scoreinit : MonoBehaviour
     {
         PinballController.score = 0;
         PinballController.combo = 0;
+        PinballController.chance = 2;
     }
 }
