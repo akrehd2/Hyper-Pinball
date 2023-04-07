@@ -94,6 +94,7 @@ public class PinballController : MonoBehaviour
                 {
                     pinBallrb.AddForce((startPoint - targetPoint) * 30f, ForceMode.Impulse);
                     line.gameObject.SetActive(false);
+                    SndCtrl.Instance.Sources[2].Play();
                     chance -= 1;
                     combo = 1;
                 }
@@ -139,6 +140,7 @@ public class PinballController : MonoBehaviour
         if (collision.gameObject.name == "Barrel")
         {
             collision.gameObject.GetComponent<itemRotate>().PS.Play();
+            SndCtrl.Instance.Sources[4].Play();
             Destroy(collision.gameObject);
 
             //pinBallrb.velocity = new Vector3(-1*(pinBallrb.velocity.x * 3f), pinBallrb.velocity.y, -1*(pinBallrb.velocity.z * 3f));
@@ -165,6 +167,7 @@ public class PinballController : MonoBehaviour
         if (collision.collider.CompareTag("Rock"))
         {
             Instantiate(RockPS, transform.position + new Vector3(0,4,0), transform.rotation);
+            SndCtrl.Instance.Sources[5].Play();
 
             pinBallrb.velocity = Vector3.Reflect(lastVelocity, collision.contacts[0].normal);
         }
@@ -175,6 +178,7 @@ public class PinballController : MonoBehaviour
         if (other.gameObject.name == "BasicGem")
         {
             other.GetComponent<itemRotate>().PS.Play();
+            SndCtrl.Instance.Sources[3].Play();
             Destroy(other.gameObject);
 
             score += 100 * combo;
@@ -184,6 +188,7 @@ public class PinballController : MonoBehaviour
         if (other.gameObject.name == "Star")
         {
             other.GetComponent<itemRotate>().PS.Play();
+            SndCtrl.Instance.Sources[3].Play();
             Destroy(other.gameObject);
 
             score += 1000 * combo;
@@ -193,6 +198,7 @@ public class PinballController : MonoBehaviour
         if (other.gameObject.name == "Power")
         {
             other.GetComponent<itemRotate>().PS.Play();
+            SndCtrl.Instance.Sources[3].Play();
             Destroy(other.gameObject);
 
             chance += 1;
@@ -202,6 +208,7 @@ public class PinballController : MonoBehaviour
         if (other.gameObject.name == "Dollar")
         {
             other.GetComponent<itemRotate>().PS.Play();
+            SndCtrl.Instance.Sources[3].Play();
             Destroy(other.gameObject);
 
             coin += Random.Range(5, 10);
