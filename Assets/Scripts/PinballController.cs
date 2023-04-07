@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PinballController : MonoBehaviour
 {
+    public TextMeshProUGUI Coin;
+    public TextMeshProUGUI Score;
+    public TextMeshProUGUI Combo;
+    public TextMeshProUGUI Chance;
+
     public Rigidbody pinBallrb;
     public LineRenderer line;
     public ParticleSystem mine;
@@ -20,16 +26,22 @@ public class PinballController : MonoBehaviour
 
     public static long score = 0;
     public static long coin = 0;
-    [SerializeField]
-    long combo = 0;
+    public static long combo = 0;
 
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+        Coin.text = coin.ToString();
+        Score.text = score.ToString();
+        Combo.text = "Combo " + combo.ToString();
+        Chance.text = "Chance " + chance.ToString();
+
+        Combo.color = new Color(255, 255 - combo * 5, 255 - combo * 5, 128);
+
         //최대속도
-        if(pinBallrb.velocity.x > MaxSpeed)
+        if (pinBallrb.velocity.x > MaxSpeed)
         {
             pinBallrb.velocity = new Vector3(MaxSpeed, 0, pinBallrb.velocity.z);
         }
@@ -74,6 +86,7 @@ public class PinballController : MonoBehaviour
         }
         else if(chance <= 0 && combo == 0)
         {
+            coin += score / 1000;
             Panel.GetComponent<ChangeScene>().GoEndScene(); 
         }
         else
@@ -92,6 +105,11 @@ public class PinballController : MonoBehaviour
         else
         {
             mine.Play();
+
+            if(combo == 0)
+            {
+                combo = 1;
+            }
         }
     }
 
@@ -162,6 +180,15 @@ public class PinballController : MonoBehaviour
             Destroy(other.gameObject);
 
             chance += 1;
+            combo += 1;
+        }
+
+        if (other.gameObject.name == "Dollar")
+        {
+            other.GetComponent<itemRotate>().PS.Play();
+            Destroy(other.gameObject);
+
+            coin += Random.Range(5, 10);
             combo += 1;
         }
     }

@@ -13,7 +13,7 @@ public class itemRotate : MonoBehaviour
 
     void Start()
     {
-        if(rot == false)
+        if(rot == false && gameObject.name != "Dollar")
         {
             transform.Rotate(0, Random.Range(0f,180f), 0);
         }
