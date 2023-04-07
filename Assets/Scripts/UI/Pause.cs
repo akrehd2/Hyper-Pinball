@@ -60,4 +60,9 @@ public class Pause : MonoBehaviour
             Pin.GetComponent<PinballController>().targetPoint = Pin.GetComponent<PinballController>().startPoint;
         }
     }
+
+    public void CoinUp()
+    {
+        PinballController.coin += 1000;
+    }
 }

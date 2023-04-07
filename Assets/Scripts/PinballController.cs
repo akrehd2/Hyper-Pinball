@@ -7,6 +7,10 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PinballController : MonoBehaviour
 {
+    public Material mat;
+    public Mesh[] mes;
+    public GameObject Area;
+
     public TextMeshProUGUI Coin;
     public TextMeshProUGUI Score;
     public TextMeshProUGUI Combo;
@@ -31,6 +35,26 @@ public class PinballController : MonoBehaviour
     public static long combo = 0;
     public static long coinGain = 0;
 
+    public static bool skin1 = false;
+    public static bool skin2 = false;
+    public static bool skin3 = false;
+    public static bool skin4 = false;
+    public static bool skin5 = false;
+
+    void Awake()
+    {
+        //½ºÅ²
+        if (skin1 == true)
+        {
+            Debug.Log("skin1");
+            gameObject.GetComponent<MeshRenderer>().material = mat;
+            gameObject.GetComponent<MeshFilter>().mesh = mes[0];
+
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            Area.transform.localScale = new Vector3(3f, 3f, 1f);
+            Area.transform.position = new Vector3(-4.1f, 0, 9.32f);
+        }
+    }
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

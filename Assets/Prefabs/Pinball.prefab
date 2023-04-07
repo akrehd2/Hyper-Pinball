@@ -241,6 +241,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6b30a1739c93b4797c68f8d4f22fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: 25dadcf9f96c1a440b352d2704c10140, type: 2}
+  mes:
+  - {fileID: 4300000, guid: bc80b1c0c6bd414449ab940524ca32cc, type: 3}
+  - {fileID: 4300000, guid: a406ead831dbb814ea4f01192d00566a, type: 3}
+  - {fileID: 4300000, guid: 43b6a00a5b5f6c84ba3bea9f5cf1dbd3, type: 3}
+  - {fileID: 4300000, guid: a52e2a738529c0c48ac22334d480de0d, type: 3}
+  - {fileID: 4300000, guid: f8b339c2bde45604587ccd8000eb357e, type: 3}
+  - {fileID: 4300000, guid: 585d24313cd32b147b5fccce66c642a6, type: 3}
+  Area: {fileID: 1717953405}
   Coin: {fileID: 0}
   Score: {fileID: 0}
   Combo: {fileID: 0}
@@ -251,6 +260,8 @@ MonoBehaviour:
   RockPS: {fileID: 7938320367353215063, guid: 15b6eecc1f789054b9e1eb64aaac9bdd, type: 3}
   Panel: {fileID: 0}
   MaxSpeed: 700
+  startPoint: {x: 0, y: 0, z: 0}
+  targetPoint: {x: 0, y: 0, z: 0}
 --- !u!198 &539387843
 ParticleSystem:
   m_ObjectHideFlags: 0
