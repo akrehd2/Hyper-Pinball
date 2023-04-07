@@ -38,7 +38,7 @@ public class PinballController : MonoBehaviour
         Combo.text = "Combo " + combo.ToString();
         Chance.text = "Chance " + chance.ToString();
 
-        Combo.color = new Color(255, 255 - combo * 5, 255 - combo * 5, 128);
+        Combo.color = new Color(255, 255 - combo * 5/255, 255 - combo * 5/255, 128);
 
         //최대속도
         if (pinBallrb.velocity.x > MaxSpeed)
@@ -87,7 +87,7 @@ public class PinballController : MonoBehaviour
         else if(chance <= 0 && combo == 0)
         {
             coin += score / 1000;
-            Panel.GetComponent<ChangeScene>().GoEndScene(); 
+            Panel.GetComponent<ChangeScene>().GoEndScene();
         }
         else
         {

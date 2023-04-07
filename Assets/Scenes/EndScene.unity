@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b7a3d09fea41c41bd43f1abddbf114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pin: {fileID: 0}
 --- !u!1001 &315883413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1318,6 +1319,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 166235255}
     m_Modifications:
+    - target: {fileID: -8523917336599520331, guid: f9ae55533a18b624881399bb573858a5, type: 3}
+      propertyPath: Pin
+      value: 
+      objectReference: {fileID: 1687646098}
     - target: {fileID: 1539846410355790974, guid: f9ae55533a18b624881399bb573858a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1730,6 +1735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c1645baa43afa488f76a2ef1234c5a, type: 3}
+--- !u!1 &1687646098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7231290979737816734, guid: 85c1645baa43afa488f76a2ef1234c5a, type: 3}
+  m_PrefabInstance: {fileID: 1687646097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2104774363
 GameObject:
   m_ObjectHideFlags: 0
